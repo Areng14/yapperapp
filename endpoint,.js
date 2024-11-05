@@ -1,5 +1,6 @@
 const endpoint = {
-    login: '/api/login'
+    login: '/api/login',
+    users: '/api/user/getUserList'
 }
 
 module.exports =  endpoint

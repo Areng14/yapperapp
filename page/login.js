@@ -25,3 +25,8 @@ ipcRenderer.on('login-failed', (event, data) => {
     const element = document.getElementById('login-form')
     element.appendChild(pTag)
 })
+
+ipcRenderer.on('login-success', (event, token) => {
+    sessionStorage.setItem('jwtToken', token)
+    window.location = 'userList.html'
+})

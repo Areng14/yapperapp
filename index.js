@@ -31,7 +31,8 @@ ipcMain.on('on-login', async (event, payload) => {
             password: password
         })
         if (response.data.success) {
-            event.sender.send('login-success')
+            const token = response.data.data
+            event.sender.send('login-success', token)
         }
     } catch (error) {
         event.sender.send('login-failed', error.response.data.message)
